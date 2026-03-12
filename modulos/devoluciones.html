@@ -77,13 +77,78 @@
 <!-- CONTENIDO DINÁMICO -->
 <main class="container my-5 flex-grow-1">
 
-  <!-- Cada página cambia este contenido -->
+<div class="container my-5">
 
-  <section class="text-center">
-    <h1>Devoluciones</h1>
-    <p>Contenido a desarrollar</p>
-  </section>
+    <h1 class="text-center mb-4">Política de Devoluciones</h1>
 
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5>Condiciones Generales</h5>
+            <ul>
+                <li>Las devoluciones son válidas dentro de los 30 días posteriores a la compra.</li>
+                <li>El producto debe estar en buen estado y con su empaque original.</li>
+                <li>Se requiere comprobante de compra.</li>
+                <li>No aplican devoluciones en productos personalizados.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5>Proceso de Devolución</h5>
+            <ol>
+                <li>Completar el formulario de solicitud.</li>
+                <li>Esperar confirmación por correo electrónico.</li>
+                <li>Enviar el producto a la dirección indicada.</li>
+                <li>Recepción y validación del producto.</li>
+                <li>Reembolso o cambio del producto.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="mb-3">Formulario de Solicitud</h5>
+
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nombre completo</label>
+                    <input type="text" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Número de pedido</label>
+                    <input type="text" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Motivo de devolución</label>
+                    <select class="form-select">
+                        <option>Producto defectuoso</option>
+                        <option>Error en el envío</option>
+                        <option>No cumple expectativas</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Descripción del problema</label>
+                    <textarea class="form-control" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-dark w-100">
+                    Enviar Solicitud
+                </button>
+            </form>
+        </div>
+    </div>
+
+</div>
 </main>
 
 <!-- FOOTER -->
