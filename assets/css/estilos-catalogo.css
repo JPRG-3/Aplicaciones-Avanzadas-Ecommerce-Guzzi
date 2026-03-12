@@ -4,17 +4,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 :root {
-  --dark-bg: #121212;
-  --card-bg: #1e1e1e;
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
+  /* light theme to match index.html */
+  --dark-bg: #ffffff;
+  --card-bg: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #555555;
   --accent: #e50914;
   --accent-hover: #f41a26;
-  --border: #333;
+  --border: #ccc;
   --success: #28a745;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -168,11 +168,9 @@ body {
   margin: 0 auto;
   padding: 0 2rem 3rem;
 }
-
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 /* ===== PRODUCT CARD ===== */
@@ -192,7 +190,7 @@ body {
 .product-image {
   width: 100%;
   height: 300px;
-  background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,7 +235,6 @@ body {
   font-size: 0.9rem;
   margin-bottom: 1rem;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -318,27 +315,29 @@ body {
 
 /* ===== MODAL ===== */
 .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 1000;
+  /* let bootstrap handle positioning/display; keep element itself transparent */
+  background: transparent !important;
+}
+
+/* when Bootstrap shows the modal, ensure flex centering and padding */
+.modal.show {
+  display: flex !important;
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  background: transparent !important; /* don't darken via modal container */
 }
 
-.modal.active {
-  display: flex;
+/* fade out backdrop to keep background visible but soft */
+.modal-backdrop.show {
+  opacity: 0.25 !important;
 }
 
 .modal-content {
   background: var(--card-bg);
   border-radius: 12px;
-  max-width: 900px;
+  /* keep modal a reasonable size but allow it to shrink on narrow screens */
+  max-width: 95vw;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
@@ -359,14 +358,12 @@ body {
 }
 
 .modal-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  /* use Bootstrap's default behaviour; avoid custom grid that conflicts with row/col */
   padding: 2rem;
 }
 
 .modal-image {
-  background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
   border-radius: 8px;
   min-height: 350px;
   display: flex;
@@ -478,16 +475,15 @@ body {
     margin-top: 0.5rem;
   }
 
-  .modal-body {
-    grid-template-columns: 1fr;
-  }
+  /* modal-body uses bootstrap grid; no extra rules needed here */
 
   .filters {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  .filter-group {
+    width: 100%;
+    justify-content: space-between;
   }
 }

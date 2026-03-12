@@ -4,35 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GUZZI - Catálogo</title>
-  <link rel="stylesheet" href="estilos.css" />
+  <!-- Bootstrap CSS (same as index) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/estilos-catalogo.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="header-container">
-      <div class="logo">Guzzi</div>
-      <nav class="nav">
-        <a href="#">Inicio</a>
-        <a href="#" class="active">Tienda</a>
-        <a href="#">Colecciones</a>
-        <a href="#">Contacto</a>
-      </nav>
-      <div class="header-actions">
-        <button class="cart-btn" id="cartBtn">
-          <i class="fas fa-shopping-cart"></i>
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
-        <div class="currency-selector">
-          <span class="flag">🇲🇽</span>
-          <select id="currency">
-            <option value="MXN">MXN</option>
-            <option value="USD">USD</option>
-          </select>
-        </div>
+  <!-- HEADER (copied from index.html for consistent look) -->
+  <header class="border-bottom">
+    <div class="container py-3 d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h2 class="m-0">GUZZI</h2>
       </div>
+
+      <div class="icons d-none d-md-flex gap-3">
+        <a href="mi-cuenta.html">Mi Cuenta</a>
+      </div>
+
     </div>
   </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="menuNavbar">
+
+        <ul class="navbar-nav gap-lg-4 text-center">
+
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="catalogo.html">Catálogo</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="piezas-personalizadas.html">Piezas Personalizadas</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">Nosotros</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html">Contacto</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="devoluciones.html">Devoluciones</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
 
   <!-- Breadcrumbs -->
   <div class="breadcrumbs">
@@ -62,18 +95,22 @@
   </section>
 
   <!-- Catálogo de Productos -->
-  <main class="catalog">
-    <div class="products-grid" id="productsGrid">
-      <!-- Los productos se generan con JavaScript -->
+  <main class="catalog py-5">
+    <div class="container">
+      <div class="row g-4" id="productsGrid">
+        <!-- Los productos se generan con JavaScript -->
+      </div>
     </div>
   </main>
 
-  <!-- Modal Quick View -->
-  <div class="modal" id="quickViewModal">
-    <div class="modal-content">
-      <button class="modal-close" id="modalClose">&times;</button>
-      <div class="modal-body" id="modalBody">
-        <!-- Contenido dinámico -->
+  <!-- Modal Quick View (bootstrap structure) -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <div class="modal-body" id="modalBody">
+          <!-- Contenido dinámico -->
+        </div>
       </div>
     </div>
   </div>
@@ -88,6 +125,8 @@
     <p>&copy; 2026 Guzzi. Todos los derechos reservados. Hecho en México 🇲🇽</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Bootstrap JS (bundle includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="../assets/js/script-catalogo.js"></script>
 </body>
 </html>
