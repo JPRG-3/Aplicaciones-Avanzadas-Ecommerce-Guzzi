@@ -75,14 +75,57 @@
 </nav>
 
 <!-- CONTENIDO DINÁMICO -->
-<main class="container my-5 flex-grow-1">
+<main 
 
-  <!-- Cada página cambia este contenido -->
+  <div class="container">
 
-  <section class="text-center">
-    <h1>Piezas Personalizadas</h1>
-    <p>Contenido a desarrollar</p>
-  </section>
+<div class="preview">
+
+<img id="product-img" src="img/playera.png">
+
+<img id="design">
+
+</div>
+
+<div class="controls">
+
+<h2>Personaliza tu prenda</h2>
+
+<label>1. Prenda</label>
+
+<div class="product-selector">
+
+<button class="active" onclick="changeProduct('playera',this)">Playera</button>
+
+<button onclick="changeProduct('camisa',this)">Camisa</button>
+
+<button onclick="changeProduct('pantalon',this)">Pantalón</button>
+
+</div>
+
+<label>2. Color</label>
+
+<div class="colors" id="colors"></div>
+
+<label>3. Subir diseño</label>
+
+<input type="file" id="upload">
+
+<div class="price">
+
+<div>Producto: $<span id="base">399</span></div>
+
+<div>Personalización: $150</div>
+
+<div class="total">Total: $<span id="total">549</span></div>
+
+</div>
+
+<button class="cart" onclick="addCart()">Añadir al carrito</button>
+
+</div>
+
+</div>
 
 </main>
 
